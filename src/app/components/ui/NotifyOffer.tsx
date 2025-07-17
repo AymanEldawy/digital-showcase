@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useMemo, useState } from "react";
 
 const NotifyOffer = () => {
@@ -14,7 +14,7 @@ const NotifyOffer = () => {
     return date.toLocaleDateString("en-US", {
       month: "long",
       day: "numeric",
-      year: "numeric"
+      year: "numeric",
     });
   }, []);
 
@@ -25,8 +25,12 @@ const NotifyOffer = () => {
       role="alert"
       className="bg-green-100 text-green-800 p-3 text-center flex justify-between items-center"
     >
-      <span>🎉 Special Offer: <strong>20%</strong> off all products until {next20Days}!</span>
+      <span>
+        🎉 Special Offer: <strong>20%</strong> off all products until{" "}
+        {next20Days}!
+      </span>
       <button
+        data-testid="closeButton"
         onClick={handleClose}
         className="ml-4 text-xl font-bold focus:outline-none"
         aria-label="Close notification"
@@ -34,7 +38,7 @@ const NotifyOffer = () => {
         ×
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default NotifyOffer
+export default NotifyOffer;

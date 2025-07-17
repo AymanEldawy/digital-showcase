@@ -11,7 +11,7 @@ const LeftMenu = () => {
   return (
     <div>
       {isLoggedIn ? (
-        <ul className="flex space-x-2">
+        <ul className="flex space-x-2" data-testid="logged-in-menu">
           <li className="p-2 hover:bg-gray-300 cursor-pointer rounded-full flex items-center justify-center shadow">
             <Link href="/profile">
               <UserOutlineIcon />
@@ -37,7 +37,7 @@ const LeftMenu = () => {
           </li>
         </ul>
       ) : (
-        <div className="flex space-x-2">
+        <div className="flex space-x-2" data-testid="logged-out-menu">
           <button
             className="py-1 px-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
             onClick={() => setIsLoggedIn(true)}
